@@ -1,4 +1,3 @@
-# Histogram-Equalization-Using-OpenCV-Grayscale-Color-Images-
 # Histogram Equalization Using OpenCV (Grayscale & Color Images)
 
 ---

@@ -20,7 +20,7 @@ The program performs the following operations:
 
 ---
 
-## Software Used
+## 🛠️ Software Used
 
 - Anaconda – Python 3.7  
 - Jupyter Notebook / VS Code  
@@ -30,13 +30,13 @@ The program performs the following operations:
 
 ---
 
-## Algorithm
+## ⚙️ Algorithm
 
 ### Step 1:
 Import the required libraries: OpenCV, NumPy, and Matplotlib.
 
 ### Step 2:
-Read the image `parrot.jpg` in grayscale format.
+Read the image `iron.jpg` in grayscale format.
 
 ### Step 3:
 Display the grayscale image and plot its histogram.
@@ -45,7 +45,7 @@ Display the grayscale image and plot its histogram.
 Apply histogram equalization using `cv2.equalizeHist()` to enhance contrast.
 
 ### Step 5:
-Display original grayscale image, its histogram, enhanced image, and its histogram using a 2 × 2 grid.
+Display original grayscale image, its histogram, enhanced image, and its histogram using a `2 × 2` grid.
 
 ### Step 6:
 Read the same image in color format.
@@ -63,11 +63,13 @@ Apply histogram equalization on the V (Value) channel.
 Merge the channels and convert the image back to BGR format.
 
 ### Step 11:
-Display original color image, histogram, enhanced image, and enhanced histogram using a 2 × 2 grid.
+Display original color image, histogram, enhanced image, and enhanced histogram using a `2 × 2` grid.
 
 ---
 
-## Program
+# 💻 Program
+
+```python
 # Developed By: HASHINI.R
 # Register Number: 212224240055
 
@@ -75,16 +77,22 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Read image
 image = cv2.imread('iron.jpg')
 
+# Convert to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
+# Calculate histogram of original image
 hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
+# Apply histogram equalization
 equalized_image = cv2.equalizeHist(gray_image)
 
+# Calculate histogram of equalized image
 hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
 
+# Display grayscale images and histograms
 plt.figure(figsize=(10, 7))
 
 plt.subplot(2, 2, 1)
@@ -102,8 +110,6 @@ plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
 
-
-
 plt.subplot(2, 2, 4)
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
@@ -111,23 +117,26 @@ plt.xlim([0, 256])
 
 plt.tight_layout()
 plt.show()
-
-
-
+```
 
 ---
 
-##  Output
+# Output
+
 <img width="1424" height="873" alt="image" src="https://github.com/user-attachments/assets/581197fa-b3fe-4f25-b0f4-4060ab8ac021" />
 
-### Grayscale Histogram Equalization
+---
+
+## Grayscale Histogram Equalization
 
 - Original grayscale image is displayed  
 - Histogram of original grayscale image is plotted  
 - Enhanced image after histogram equalization is displayed  
 - Histogram of enhanced grayscale image shows improved contrast  
 
-### Color Image Histogram Equalization
+---
+
+## Color Image Histogram Equalization
 
 - Original color image is displayed  
 - Histogram of B, G, R channels is plotted  
@@ -136,6 +145,6 @@ plt.show()
 
 ---
 
-## Result
+# Result
 
 Thus, histogram equalization is successfully performed on both grayscale and color images using OpenCV. The contrast and brightness of the images are significantly improved, enhancing visual quality and feature visibility.

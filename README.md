@@ -54,7 +54,7 @@ Apply histogram equalization on the V (Value) channel.
 Merge the channels and convert the image back to BGR format.
 
 ### Step 11:
-Display original color image, histogram, enhanced image, and enhanced histogram using a `2 × 2` grid.
+Display original color image and enhanced image.
 
 ---
 
@@ -66,12 +66,6 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-```
-
-**Output:**
-
-```python
-# Libraries imported successfully
 ```
 
 ---
@@ -89,12 +83,6 @@ plt.axis('off')
 plt.show()
 ```
 
-**Output:**
-
-```python
-# Original image is displayed
-```
-
 ---
 
 ### In [3]:
@@ -108,12 +96,6 @@ plt.imshow(gray_image, cmap='gray')
 plt.title("Grayscale Image")
 plt.axis('off')
 plt.show()
-```
-
-**Output:**
-
-```python
-# Grayscale image is displayed
 ```
 
 ---
@@ -131,12 +113,6 @@ plt.xlim([0, 256])
 plt.show()
 ```
 
-**Output:**
-
-```python
-# Histogram of original image is displayed
-```
-
 ---
 
 ### In [5]:
@@ -152,12 +128,6 @@ plt.axis('off')
 plt.show()
 ```
 
-**Output:**
-
-```python
-# Equalized image is displayed
-```
-
 ---
 
 ### In [6]:
@@ -171,12 +141,6 @@ plt.plot(hist_equalized, color='black')
 plt.title("Equalized Histogram")
 plt.xlim([0, 256])
 plt.show()
-```
-
-**Output:**
-
-```python
-# Equalized histogram is displayed
 ```
 
 ---
@@ -211,14 +175,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Output:**
-
-```python
-# Grayscale histogram equalization results are displayed
-```
-
-<img width="1424" height="873" alt="image" src="https://github.com/user-attachments/assets/581197fa-b3fe-4f25-b0f4-4060ab8ac021" />
-
 ---
 
 ### In [8]:
@@ -237,12 +193,6 @@ plt.plot(cv2.calcHist([r], [0], None, [256], [0, 256]), color='red')
 plt.title("BGR Channel Histograms")
 plt.xlim([0, 256])
 plt.show()
-```
-
-**Output:**
-
-```python
-# B, G, R histograms are displayed
 ```
 
 ---
@@ -272,12 +222,6 @@ plt.axis('off')
 plt.show()
 ```
 
-**Output:**
-
-```python
-# Enhanced color image is displayed
-```
-
 ---
 
 ### In [10]:
@@ -301,11 +245,25 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Output:**
+---
 
-```python
-# Original and enhanced color images are displayed
-```
+# Output
+
+<img width="1424" height="873" alt="image" src="https://github.com/user-attachments/assets/581197fa-b3fe-4f25-b0f4-4060ab8ac021" />
+
+### Grayscale Histogram Equalization
+
+- Original grayscale image is displayed  
+- Histogram of original grayscale image is plotted  
+- Enhanced image after histogram equalization is displayed  
+- Histogram of enhanced grayscale image shows improved contrast  
+
+### Color Image Histogram Equalization
+
+- Original color image is displayed  
+- Histogram of B, G, R channels is plotted  
+- Enhanced image after HSV-based equalization is displayed  
+- Histogram of enhanced image shows better intensity distribution  
 
 ---
 
